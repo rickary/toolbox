@@ -1,0 +1,54 @@
+/*
+|--------------------------------------------------------------------------
+|	Typography
+|--------------------------------------------------------------------------
+*/
+
+//	https://gist.github.com/1670945#gistcomment-78254
+
+/*
+|	REM
+*/
+
+@mixin rem($attribute, $value) {
+	#{$attribute}: #{$value}px;
+	#{$attribute}: #{$value / 16}rem;
+}
+
+
+
+/*
+|	Font-Size
+*/
+
+@mixin font_size($size) {
+	@include rem(font-size, $size);
+}
+
+
+
+/*
+|	Adjust
+*/
+
+@include text-size-adjust {
+	-webkit-text-size-adjust: 100%;
+	   -moz-text-size-adjust: 100%;
+	    -ms-text-size-adjust: 100%;
+	     -o-text-size-adjust: 100%;
+	        text-size-adjust: 100%;
+}
+
+
+
+/*
+|	Render
+*/
+
+@include text-rendering {
+	-webkit-text-rendering: optimizeLegibility;
+	   -moz-text-rendering: optimizeLegibility;
+	    -ms-text-rendering: optimizeLegibility;
+	     -o-text-rendering: optimizeLegibility;
+	        text-rendering: optimizeLegibility;
+}

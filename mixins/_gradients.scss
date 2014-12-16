@@ -1,0 +1,104 @@
+/*
+|--------------------------------------------------------------------------
+|	Gradients
+|--------------------------------------------------------------------------
+*/
+
+/*
+|	Horizontal
+*/
+
+@mixin gradient-horizontal($startColour, $endColour) {
+
+	background: $startColour;
+	background: -webkit-gradient(linear, 0 0, 100% 0, from($startColour), to($endColour));
+	background: -webkit-linear-gradient(left, $startColour, $endColour);
+	background: -moz-linear-gradient(left, $startColour, $endColour);
+	background: -ms-linear-gradient(left, $startColour, $endColour);
+	background: -o-linear-gradient(left, $startColour, $endColour);
+	background: linear-gradient(left, $startColour, $endColour);
+}
+
+
+
+/*
+|	Vertical
+*/
+
+@mixin gradient-vertical($startColour, $endColour) {
+
+	background: $startColour;
+	background: -webkit-gradient(linear, 0 0, 0 100%, from($startColour), to($endColour));
+	background: -webkit-linear-gradient(top, $startColour, $endColour);
+	background: -moz-linear-gradient(top, $startColour, $endColour);
+	background: -ms-linear-gradient(top, $startColour, $endColour);
+	background: -o-linear-gradient(top, $startColour, $endColour);
+	background: linear-gradient(top, $startColour, $endColour);
+}
+
+
+
+/*
+|	Directional
+*/
+
+@mixin gradient-directional($startColour, $endColour, $angle : 45deg) {
+
+	background: $startColour;
+	background: -webkit-linear-gradient($angle, $startColour, $endColour);
+	background: -moz-linear-gradient($angle, $startColour, $endColour);
+	background: -ms-linear-gradient($angle, $startColour, $endColour);
+	background: -o-linear-gradient($angle, $startColour, $endColour);
+	background: linear-gradient($angle, $startColour, $endColour);
+}
+
+
+
+/*
+|	Radial
+*/
+
+@mixin gradient-radial($outerColour, $innerColour) {
+
+	background: $outerColour;
+	background: -webkit-radial-gradient(center, ellipse cover, $innerColour 0%, $outerColour 100%);
+	background: -moz-radial-gradient(center, ellipse cover,  $innerColour 0%, $outerColour 100%);
+	background: -ms-radial-gradient(center, ellipse cover,  $innerColour 0%, $outerColour 100%);
+	background: -o-radial-gradient(center, ellipse cover,  $innerColour 0%, $outerColour 100%);
+	background: radial-gradient(ellipse at center,  $innerColour 0%, $outerColour 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$outerColour', endColorstr='$outerColour',GradientType=1 );
+}
+
+
+
+/*
+|	3-Stop-Horizonal
+*/
+
+@mixin gradient-three-horizontal($startColour, $endColour, $stopColour: $endColour, $stopLocation: 100%) {
+
+	background: $startColour;
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,$startColour), color-stop($stopLocation,$stopColour), color-stop(100%,$endColour));
+	background: -webkit-linear-gradient(left, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: -moz-linear-gradient(left, $startColour 0%, $stop-color $stopLocation, $endColour 100%);
+	background: -ms-linear-gradient(left, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: -o-linear-gradient(left, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: linear-gradient(left, $startColour 0%, $color-stop $stopLocation, $endColour 100%); 
+}
+
+
+
+/*
+|	3-Stop-Vertical
+*/
+
+@mixin gradient-three-vertical($startColour, $endColour, $stopColour: $endColour, $stopLocation: 100%) {
+
+	background: $startColour;							
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColour), color-stop($stopLocation,$stopColour), color-stop(100%,$endColour));
+	background: -webkit-linear-gradient(top, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: -moz-linear-gradient(top, $startColour 0%, $stop-color $stopLocation, $endColour 100%);
+	background: -ms-linear-gradient(top, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: -o-linear-gradient(top, $startColour 0%, $color-stop $stopLocation, $endColour 100%);
+	background: linear-gradient(top, $startColour 0%, $color-stop $stopLocation, $endColour 100%); 
+}

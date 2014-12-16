@@ -1,0 +1,42 @@
+/*
+|--------------------------------------------------------------------------
+|	Grid
+|
+|	Requires variables:
+|		$grid-column-width
+|		$grid-gutter
+|		$grid-columns
+|
+|--------------------------------------------------------------------------
+*/
+
+
+	// Basic
+
+	@mixin grid-basic($cols) {
+		display: inline;
+		float: left;
+	       
+	    width: ((($grid-column-width*($cols)) + ($grid-gutter*($cols - 1))) / (($grid-column-width*$grid-columns)+($grid-gutter*($grid-columns - 1))))*100%;
+	    
+	    margin-left: ($grid-gutter/(($grid-column-width*$grid-columns)+($grid-gutter*($grid-columns - 1))))*100%;
+	    
+	    &:first-child { margin-left: 0;}
+	}
+
+
+	// Flush
+
+	@mixin grid-flush($cols) {
+	    display: inline;
+	    float: left;
+	    width: ((($grid-column-width*($cols)) + ($grid-gutter*($cols))) / (($grid-column-width*$grid-columns)+($grid-gutter*($grid-columns))))*100%;
+	}
+
+
+	// New Row
+
+	@mixin grid-row() {
+	    clear: both;
+	    margin-left: 0;
+	}

@@ -1,0 +1,30 @@
+/*
+|--------------------------------------------------------------------------
+|	Animation
+|--------------------------------------------------------------------------
+*/
+
+/*
+|	Transition
+*/
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	   -moz-transition: $transition;
+	   	-ms-transition: $transition;
+	   	 -o-transition: $transition;
+	   	    transition: $transition; 
+}
+
+
+
+/*
+|	Animation
+*/
+
+@mixin animation($animation, $delay, $timing, $mode) {
+	-webkit-animation: $animation $delay $timing $mode;
+	   -moz-animation: $animation $delay $timing $mode;
+	     -o-animation: $animation $delay $timing $mode;
+	        animation: $animation $delay $timing $mode;
+}

@@ -1,0 +1,32 @@
+/*
+|--------------------------------------------------------------------------
+|	Media Query
+|--------------------------------------------------------------------------
+*/
+
+// 	@stu_robson: http://alwaystwisted.com/post.php?s=2013-04-01-my-media-query-mixin
+// 	slightly adapated by me
+//	examples at the link above
+
+@mixin mq($point, $IE9: false, $query1: min, $query2: width) {
+    @if $IE9 == true{
+        .lt-ie9 & {
+            @content;
+        }
+        @media screen and (#{$query1}-#{$query2}: $point) {
+            @content;
+        }
+    }
+
+    @else {
+        @media screen and (#{$query1}-#{$query2}: $point) {
+            @content;
+        }
+    }
+}
+
+// Max-Height
+//	=	@include mq(400px, false, max, height) {}
+
+// Min-Width
+//	=	@include mq(400px) {}
