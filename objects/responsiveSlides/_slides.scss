@@ -24,17 +24,40 @@
 |
 */
 
+//  Slides
+//  ======
 
-//	put $use-slides in _config.scss
+//	http://responsiveslides.com/
 
+
+
+//  Config
+//	Slides
+//	Nav 				//	Prev/Next
+//	Pager				//	Numbers or whatever
+
+
+
+
+
+//------------------------------------//
+//  Config
+//------------------------------------//
+
+$use-slides			: false!default;
+
+$use-slides-nav 	: false;
+$use-slides-pager 	: false;
+
+
+
+
+
+//------------------------------------//
+//  Slides
+//------------------------------------//
 
 @if $use-slides == true{
-
-/*
-|--------------------------------------------------------------------------
-|   Slides
-|--------------------------------------------------------------------------
-*/
 
 .slides {
 	position: relative;
@@ -76,68 +99,75 @@
 		border: 0;
 	}
 
-
-
-
-
-/*
-|--------------------------------------------------------------------------
-|   Nav
-|--------------------------------------------------------------------------
-*/
-
-.slides__nav {
-	display: block;
-	position: absolute;
-
-	top: 50%;
 }
 
 
 
-	//	Previous
-	
-	.slides__nav.prev {
-		left: 10px;
+
+
+//------------------------------------//
+//  Nav
+//------------------------------------//
+
+@if $use-slides-nav == true{
+
+	.slides__nav {
+		display: block;
+		position: absolute;
+
+		top: 50%;
 	}
 
 
 
-	//	Next
-
-	.slides__nav.next {
-		right: 10px;
-	}
-
-
+		//	Previous
+		
+		.slides__nav.prev {
+			left: 10px;
+		}
 
 
 
-/*
-|--------------------------------------------------------------------------
-|	Pager
-|--------------------------------------------------------------------------
-*/
+		//	Next
 
-.slides__tabs {
-	@extend .nav;
-	@extend .nav--banner;
+		.slides__nav.next {
+			right: 10px;
+		}
+
 }
 
-	.slides__tabs li {
-		width: 15px;
-		height: 15px;
 
-		margin: 0 2px;
 
-		text-indent: -999em;
 
-		border: $black;
+
+//------------------------------------//
+//  Pager
+//------------------------------------//
+
+@if $use-slides-pager == true{
+
+	.slides__tabs {
+		@extend .nav;
+		@extend .nav--banner;
 	}
 
+		.slides__tabs li {
+			width: 15px;
+			height: 15px;
 
-	li.slides__here {
-		background: $black;
-	}
+			margin: 0 2px;
+
+			text-indent: -999em;
+
+			border: $black;
+		}
+
+
+
+		//	Current
+
+		li.slides__here {
+			background: $black;
+		}
 
 }
